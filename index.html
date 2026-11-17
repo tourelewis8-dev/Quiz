@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - 7 Catégories (210 Questions)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- ÉCRAN D'ACCUEIL : SÉLECTION DES CATÉGORIES -->
+        <section id="home-screen" class="screen active">
+            <header>
+                <h1>Quiz Master</h1>
+                <p>Choisissez une catégorie (30 questions par thème)</p>
+            </header>
+            <div class="categories-grid" id="categories-container">
+                <!-- Les boutons des catégories seront générés par le JS -->
+            </div>
+        </section>
+
+        <!-- ÉCRAN DU QUIZ -->
+        <section id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <button id="quit-btn" class="btn-secondary">← Catégories</button>
+                <h2 id="category-title">Catégorie</h2>
+                <div class="stats">
+                    <span class="badge" id="question-counter">1 / 30</span>
+                    <span class="badge timer" id="timer">⏱️ 15s</span>
+                    <span class="badge score" id="score-display">Score: 0</span>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+
+            <div class="question-box">
+                <h3 id="question-text">Chargement de la question...</h3>
+                <div id="options-container" class="options-grid">
+                    <!-- Options générées dynamiquement -->
+                </div>
+            </div>
+
+            <div id="feedback-box" class="feedback hidden">
+                <p id="feedback-text"></p>
+                <button id="next-btn" class="btn-primary">Question suivante →</button>
+            </div>
+        </section>
+
+        <!-- ÉCRAN DES RÉSULTATS -->
+        <section id="result-screen" class="screen">
+            <h2>Quiz Terminé !</h2>
+            <p id="result-category" class="subtitle"></p>
+            <div class="score-circle">
+                <span id="final-score">0</span> / 30
+            </div>
+            <p id="result-message"></p>
+            <div class="result-actions">
+                <button id="restart-btn" class="btn-primary">Recommencer ce quiz</button>
+                <button id="change-cat-btn" class="btn-secondary">Changer de catégorie</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="scrypte.js"></script>
+</body>
+</html>
